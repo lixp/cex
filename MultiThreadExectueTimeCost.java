@@ -19,14 +19,13 @@
 	 *
 	 */
 	public class MultiThreadExectueTimeCost{
-		private ExecutorService executorService = null;
-		public MultiThreadExectueTimeCost(ExecutorService executorService) {
-			// TODO Auto-generated constructor stub
-			this.executorService = executorService;
-			completionServcie = new ExecutorCompletionService<>(executorService);
-		}
-		private int threadSize = 5;
-		private CyclicBarrier cb = new CyclicBarrier(threadSize + 1);
+	    private ExecutorService executorService = null;
+	    public MultiThreadExectueTimeCost(ExecutorService executorService) {
+            	this.executorService = executorService;
+		completionServcie = new ExecutorCompletionService<>(executorService);
+	    }
+	    private int threadSize = 5;
+	    private CyclicBarrier cb = new CyclicBarrier(threadSize + 1);
 	    private CompletionService<Long> completionServcie = null;
 	    public void recordTime(){
 	    	for(int i = 0; i < threadSize; i++) {
